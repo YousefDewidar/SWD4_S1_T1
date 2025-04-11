@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:habitect/core/layout/main_layout.dart';
 import 'package:habitect/core/routes/generate_routes.dart';
-import 'package:habitect/core/routes/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor: Color(0xffFCFCFF),
+        appBarTheme: AppBarTheme(backgroundColor: Color(0xffFCFCFF)),
+      ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: Routes.mainLayout,
+      initialRoute: MainLayout.id,
     );
   }
 }

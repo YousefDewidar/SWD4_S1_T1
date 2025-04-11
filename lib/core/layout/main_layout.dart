@@ -6,6 +6,8 @@ import 'package:habitect/features/progress/ui/views/progress_view.dart';
 class MainLayout extends StatefulWidget {
   const MainLayout({super.key});
 
+  static const id = 'main_layout';
+
   @override
   State<MainLayout> createState() => _MainLayoutState();
 }
@@ -13,12 +15,12 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   int _currentIndex = 0;
 
-  final List<Widget> _screens = [HomeView(), ProgressView()];
+  final List<Widget> _screens = [HomeView(), ProgressView(),HomeView()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
+      body: SafeArea(child: _screens[_currentIndex]),
       bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
         onTap: (index) {

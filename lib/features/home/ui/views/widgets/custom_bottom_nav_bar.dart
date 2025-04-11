@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habitect/core/utils/app_colors.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   final void Function(int) onTap;
@@ -14,6 +15,8 @@ class CustomBottomNavBar extends StatelessWidget {
     return BottomNavigationBar(
       onTap: onTap,
       currentIndex: currentIndex,
+      backgroundColor: Colors.white,
+      fixedColor: AppColors.primaryColor,
       items: [
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(
