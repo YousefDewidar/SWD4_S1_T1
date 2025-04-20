@@ -192,6 +192,6 @@ class _HabitsViewState extends State<HabitsView> {
         ],
 
       ),
-    );;
+    );
   }
 }
