@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:habitect/core/layout/main_layout.dart';
+import 'package:habitect/features/auth/ui/views/login_view.dart';
+import 'package:habitect/features/auth/ui/views/signup_view.dart';
+import 'package:habitect/features/auth/ui/views/verify_code_view.dart';
 import 'package:habitect/features/home/ui/views/goal_view.dart';
 import 'package:habitect/features/home/ui/views/home_view.dart';
 import 'package:habitect/features/progress/ui/views/all_goals_view.dart';
@@ -16,7 +19,15 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
     case AllGoalsView.id:
       return MaterialPageRoute(builder: (context) => const AllGoalsView());
     case GoalView.id:
-       return MaterialPageRoute(builder: (context) => const GoalView());
+      return MaterialPageRoute(builder: (context) => const GoalView());
+    case SignupView.id:
+      return MaterialPageRoute(builder: (context) => const SignupView());
+    case LoginView.id:
+      return MaterialPageRoute(builder: (context) => const LoginView());
+    case VerifyCodeView.id:
+      return MaterialPageRoute(
+        builder: (context) => const VerifyCodeView(email: ''),
+      );
     default:
       return null;
   }

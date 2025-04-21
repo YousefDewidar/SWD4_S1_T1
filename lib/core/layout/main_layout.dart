@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:habitect/features/home/ui/views/home_view.dart';
-import 'package:habitect/features/home/ui/views/widgets/custom_bottom_nav_bar.dart';
+import 'package:habitect/core/widgets/custom_bottom_nav_bar.dart';
 import 'package:habitect/features/progress/ui/views/progress_view.dart';
 
 class MainLayout extends StatefulWidget {

@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:habitect/core/layout/main_layout.dart';
+import 'package:habitect/core/helpers/di.dart';
 import 'package:habitect/core/routes/generate_routes.dart';
+import 'package:habitect/features/auth/ui/views/login_view.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Supabase
+  await Supabase.initialize(
+    url: 'https://your-supabase-url.supabase.co',
+    anonKey: 'your-anon-key',
+  );
+  await setupLocator();
+
   runApp(const MyApp());
 }
 
@@ -18,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
-      initialRoute: MainLayout.id,
+      initialRoute: LoginView.id,
     );
   }
 }
