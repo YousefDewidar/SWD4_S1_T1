@@ -32,9 +32,9 @@ class GoalItem extends StatelessWidget {
             width: 5,
             fontSize: 12,
             color:
-                goal.status == GoalStatus.achieved
-                    ? AppColors.primaryColor
-                    : Colors.grey,
+            goal.status == GoalStatus.achieved
+                ? AppColors.primaryColor
+                : Colors.grey,
           ),
 
           const SizedBox(width: 16),
@@ -63,16 +63,16 @@ class GoalItem extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
               color:
-                  goal.status == GoalStatus.achieved ? Color.fromARGB(79, 221, 231, 246) : null,
+              goal.status == GoalStatus.achieved ? Color.fromARGB(79, 221, 231, 246) : null,
               borderRadius: BorderRadius.circular(20),
             ),
             child: Text(
               goal.status == GoalStatus.achieved ? 'Achieved' : 'Not Achieved',
               style: TextStyle(
                 color:
-                    goal.status == GoalStatus.achieved
-                        ? AppColors.primaryColor
-                        : Color(0xff959595),
+                goal.status == GoalStatus.achieved
+                    ? AppColors.primaryColor
+                    : Color(0xff959595),
                 fontWeight: FontWeight.w500,
               ),
             ),
