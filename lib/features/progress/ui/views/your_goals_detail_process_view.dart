@@ -5,8 +5,6 @@ import 'package:habitect/features/progress/ui/views/widgets/goal_details.dart';
 import 'package:habitect/features/progress/ui/views/widgets/month_navigation.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-
-
 class Goal {
   final String title;
   final String progressText;
@@ -70,7 +68,6 @@ class _YourGoalsDetailProcessScreenState
       completedDaysMap: {},
     );
 
-
     for (int i = 0; i < 7; i++) {
       DateTime day = DateTime.utc(2022, 6, 27).add(Duration(days: i));
       _completedDays[DateTime.utc(day.year, day.month, day.day)] = true;
@@ -110,8 +107,10 @@ class _YourGoalsDetailProcessScreenState
                     lastDay: _lastDay,
                     onPreviousMonth: () {
                       setState(() {
-                        DateTime newFocusedDay =
-                        DateTime(_focusedDay.year, _focusedDay.month - 1);
+                        DateTime newFocusedDay = DateTime(
+                          _focusedDay.year,
+                          _focusedDay.month - 1,
+                        );
                         if (newFocusedDay.isAfter(_firstDay) ||
                             isSameDay(newFocusedDay, _firstDay)) {
                           _focusedDay = newFocusedDay;
@@ -120,8 +119,10 @@ class _YourGoalsDetailProcessScreenState
                     },
                     onNextMonth: () {
                       setState(() {
-                        DateTime newFocusedDay =
-                        DateTime(_focusedDay.year, _focusedDay.month + 1);
+                        DateTime newFocusedDay = DateTime(
+                          _focusedDay.year,
+                          _focusedDay.month + 1,
+                        );
                         if (newFocusedDay.isBefore(_lastDay) ||
                             isSameDay(newFocusedDay, _lastDay)) {
                           _focusedDay = newFocusedDay;
@@ -145,7 +146,8 @@ class _YourGoalsDetailProcessScreenState
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                              "Selected day: ${selectedDay.day}/${selectedDay.month}/${selectedDay.year}"),
+                            "Selected day: ${selectedDay.day}/${selectedDay.month}/${selectedDay.year}",
+                          ),
                         ),
                       );
                     },
@@ -158,11 +160,11 @@ class _YourGoalsDetailProcessScreenState
                     habitName: "Journaling",
                     target: goal.progressText,
                     daysComplete:
-                    "${goal.completedDays ?? 7} from ${goal.targetDays ?? 7} Days",
+                        "${goal.completedDays ?? 7} from ${goal.targetDays ?? 7} Days",
                     daysFailed: "${goal.daysFailed} Day",
                     habitType: goal.habitType ?? "EVERYDAY",
                     createdOn:
-                    "${_formatDate(goal.startDate ?? DateTime.utc(2022, 6, 4))}",
+                        "${_formatDate(goal.startDate ?? DateTime.utc(2022, 6, 4))}",
                     status: goal.status,
                     screenWidth: screenWidth,
                     screenHeight: screenHeight,
@@ -189,7 +191,7 @@ class _YourGoalsDetailProcessScreenState
       "September",
       "October",
       "November",
-      "December"
+      "December",
     ];
     return "${months[date.month - 1]} ${date.day} ${date.year}";
   }
