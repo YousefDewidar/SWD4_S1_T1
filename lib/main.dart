@@ -3,7 +3,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:habitect/core/layout/main_layout.dart';
 import 'package:habitect/core/routes/generate_routes.dart';
 import 'package:habitect/generated/l10n.dart';
-import 'package:intl/intl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,6 +43,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-bool isArabic(){
-  return Intl.getCurrentLocale() == "ar";
-}
+// bool isArabic(){
+//   return Intl.getCurrentLocale() == "ar";
+// }
