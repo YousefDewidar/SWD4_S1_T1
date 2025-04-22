@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:habitect/core/helpers/di.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:habitect/core/layout/main_layout.dart';
 import 'package:habitect/core/routes/generate_routes.dart';
-// import 'package:habitect/features/auth/ui/views/login_view.dart';
-// import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:habitect/generated/l10n.dart';
+import 'package:intl/intl.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,6 +24,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: const Locale("en"),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0xffFCFCFF),
         appBarTheme: AppBarTheme(backgroundColor: Color(0xffFCFCFF)),
@@ -34,4 +42,8 @@ class MyApp extends StatelessWidget {
       initialRoute: MainLayout.id,
     );
   }
+}
+
+bool isArabic(){
+  return Intl.getCurrentLocale() == "ar";
 }
