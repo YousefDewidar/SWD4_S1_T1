@@ -35,7 +35,7 @@ class MonthNavigation extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "${_formatDate(startDate)}",
+          _formatDate(startDate),
           style: TextStyle(
             color: Colors.grey,
             fontSize: screenWidth * 0.035,
@@ -68,7 +68,7 @@ class MonthNavigation extends StatelessWidget {
           ],
         ),
         Text(
-          "${_formatDate(endDate)}",
+          _formatDate(endDate),
           style: TextStyle(
             color: Colors.grey,
             fontSize: screenWidth * 0.035,

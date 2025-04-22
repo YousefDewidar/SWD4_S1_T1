@@ -4,7 +4,17 @@ import 'package:habitect/core/layout/main_layout.dart';
 import 'package:habitect/core/routes/generate_routes.dart';
 import 'package:habitect/generated/l10n.dart';
 import 'package:intl/intl.dart';
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Supabase
+  // await Supabase.initialize(
+  //   url: 'https://your-supabase-url.supabase.co',
+  //   anonKey: 'your-anon-key',
+  // );
+  // await setupLocator();
+
   runApp(const MyApp());
 }
 
@@ -28,6 +38,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: onGenerateRoute,
+      // initialRoute: LoginView.id,
       initialRoute: MainLayout.id,
     );
   }
