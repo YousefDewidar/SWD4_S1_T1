@@ -3,6 +3,7 @@ import 'package:habitect/core/layout/main_layout.dart';
 import 'package:habitect/features/auth/ui/views/login_view.dart';
 import 'package:habitect/features/auth/ui/views/signup_view.dart';
 import 'package:habitect/features/auth/ui/views/verify_code_view.dart';
+import 'package:habitect/features/home/ui/views/create_new_habit_view.dart';
 import 'package:habitect/features/home/ui/views/goal_view.dart';
 import 'package:habitect/features/home/ui/views/home_view.dart';
 import 'package:habitect/features/progress/ui/views/all_goals_view.dart';
@@ -28,6 +29,10 @@ Route<dynamic>? onGenerateRoute(RouteSettings setting) {
 
     case GoalView.id:
       return MaterialPageRoute(builder: (context) => const GoalView());
+    case CreateNewHabitView.id:
+      return MaterialPageRoute(
+        builder: (context) => const CreateNewHabitView(),
+      );
     case SignupView.id:
       return MaterialPageRoute(builder: (context) => const SignupView());
     case LoginView.id:

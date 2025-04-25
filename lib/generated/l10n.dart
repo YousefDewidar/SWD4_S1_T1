@@ -64,6 +64,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Create New Habit Goal`
+  String get createNewHabitGoal {
+    return Intl.message(
+      'Create New Habit Goal',
+      name: 'createNewHabitGoal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Goal`
+  String get yourGoal {
+    return Intl.message('Your Goal', name: 'yourGoal', desc: '', args: []);
+  }
+
+  /// `Habit Name`
+  String get habitName {
+    return Intl.message('Habit Name', name: 'habitName', desc: '', args: []);
+  }
+
+  /// `Period`
+  String get period {
+    return Intl.message('Period', name: 'period', desc: '', args: []);
+  }
+
+  /// `Habit Type`
+  String get habitType {
+    return Intl.message('Habit Type', name: 'habitType', desc: '', args: []);
+  }
+
+  /// `Create New`
+  String get createNew {
+    return Intl.message('Create New', name: 'createNew', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
