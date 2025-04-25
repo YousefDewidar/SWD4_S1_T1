@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:habitect/features/home/ui/views/habits_view.dart';
+import 'package:habitect/features/home/ui/views/widgets/custom_floating_action_button.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:habitect/core/utils/app_colors.dart';
 import 'package:habitect/features/home/ui/views/goal_view.dart';
 import 'package:habitect/features/home/ui/views/widgets/goal_components.dart';
-
 import '../../../../core/shared/widgets/habit_item.dart';
 import '../../../../core/shared/widgets/see_text_button.dart';
 
@@ -297,13 +296,7 @@ class _HomeViewState extends State<HomeView> {
           ),
         ),
       ),
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: AppColors.primaryColor,
-        shape: CircleBorder(),
-        child: Icon(Icons.add, color: Colors.white, size: 35),
-      ),
+      floatingActionButton: CustomFloatingActionButton(),
     );
   }
 }

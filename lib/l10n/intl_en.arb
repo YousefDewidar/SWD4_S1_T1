@@ -1,3 +1,11 @@
-{
-    "title":"Flutter intl localization"
-}
+ {
+    "@@locale": "en",
+    "title": "Flutter intl localization",
+    "createNewHabitGoal": "Create New Habit Goal",
+    "yourGoal": "Your Goal",
+    "habitName": "Habit Name",
+    "period": "Period",
+    "habitType": "Habit Type",
+    "createNew": "Create New"
+  }
+  
