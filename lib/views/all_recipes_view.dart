@@ -4,7 +4,7 @@ import 'package:recips_app/constant.dart';
 import 'package:recips_app/cubit/search_cubit.dart';
 import 'package:recips_app/widgets/recommend_list_view.dart';
 import 'package:recips_app/widgets/search_home_card.dart';
-import 'package:recips_app/widgets/type_food_view.dart';
+import 'package:recips_app/widgets/category_list_view.dart';
 
 class AllRecipesView extends StatelessWidget {
   const AllRecipesView({super.key});
@@ -50,7 +50,7 @@ class AllRecipesView extends StatelessWidget {
                       color: Color.fromARGB(255, 45, 45, 45),
                     ),
                   ),
-                  const TypeFoodView(),
+                  const CategoryListView(),
                   const RecommendedListView(),
                 ],
               ),
