@@ -8,9 +8,7 @@ import 'package:recips_app/widgets/recipe_card.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class RecommendedListView extends StatelessWidget {
-  const RecommendedListView({
-    super.key,
-  });
+  const RecommendedListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,35 +28,38 @@ class RecommendedListView extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                         fontSize: 24,
-                        color: Color.fromARGB(255, 45, 45, 45),
+                        // color: Color.fromARGB(255, 45, 45, 45),
                       ),
                     ),
                     TextButton(
-                        onPressed: () {
-                          if (state is RecipeLoaded) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AllRecommendedView(
-                                  recipes: state.recipes,
-                                ),
-                              ),
-                            );
-                          }
-                        },
-                        child: const Text(
-                          "view all",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 17,
-                            color: Color.fromARGB(229, 81, 81, 81),
-                          ),
-                        ))
+                      onPressed: () {
+                        if (state is RecipeLoaded) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => AllRecommendedView(
+                                    recipes: state.recipes,
+                                  ),
+                            ),
+                          );
+                        }
+                      },
+                      child: Text(
+                        "view all",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 17,
+                          color:
+                              Theme.of(context).brightness == Brightness.dark
+                                  ? Colors.white
+                                  : Color.fromARGB(228, 81, 81, 81),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
-                const SizedBox(
-                  height: 18,
-                ),
+                const SizedBox(height: 18),
                 if (state is RecipeLoaded)
                   ListView.builder(
                     shrinkWrap: true,
@@ -66,22 +67,19 @@ class RecommendedListView extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount:
                         state.recipes.length > 6 ? 6 : state.recipes.length,
-                    itemBuilder: (context, index) => Column(
-                      children: [
-                        RecipeCard(
-                          recipe: state.recipes[index],
-                          index: index,
+                    itemBuilder:
+                        (context, index) => Column(
+                          children: [
+                            RecipeCard(
+                              recipe: state.recipes[index],
+                              index: index,
+                            ),
+                            const SizedBox(height: 40),
+                          ],
                         ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                      ],
-                    ),
                   )
                 else if (state is RecipeError)
-                  const Center(
-                    child: Text("Error"),
-                  )
+                  const Center(child: Text("Error"))
                 else
                   Skeletonizer(
                     enabled: true,
@@ -90,19 +88,18 @@ class RecommendedListView extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 2, top: 10),
                       physics: const NeverScrollableScrollPhysics(),
                       itemCount: recipeDetails().length,
-                      itemBuilder: (context, index) => Column(
-                        children: [
-                          RecipeCard(
-                            recipe: recipeDetails()[index],
-                            index: index,
+                      itemBuilder:
+                          (context, index) => Column(
+                            children: [
+                              RecipeCard(
+                                recipe: recipeDetails()[index],
+                                index: index,
+                              ),
+                              const SizedBox(height: 40),
+                            ],
                           ),
-                          const SizedBox(
-                            height: 40,
-                          ),
-                        ],
-                      ),
                     ),
-                  )
+                  ),
               ],
             );
           },

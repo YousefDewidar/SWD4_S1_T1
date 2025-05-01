@@ -8,6 +8,8 @@ class SearchView extends StatelessWidget {
   static String id = "SearchView";
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -26,26 +28,30 @@ class SearchView extends StatelessWidget {
                 onTap: () {},
                 child: Card(
                   shape: const RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(8))),
-                  color: Colors.white,
-                  elevation: 4,
+                    borderRadius: BorderRadius.all(Radius.circular(8)),
+                  ),
+                  color: isDark ? const Color(0x2C9E9E9E) : Colors.white,
+                  elevation: isDark ? 0 : 6,
                   shadowColor: const Color.fromARGB(116, 212, 212, 212),
                   surfaceTintColor: Colors.white,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: TextField(
+                      enabled: false,
                       onChanged: (v) {},
-                      decoration: const InputDecoration(
+                      decoration: InputDecoration(
                         border: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         hintText: 'Search...',
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: kPrimaryColor,
+                        hintStyle: TextStyle(
+                          color: isDark ? Colors.white : Colors.grey,
                         ),
-                        prefixIconConstraints:
-                            BoxConstraints(minWidth: 30, minHeight: 0),
+                        prefixIcon: Icon(Icons.search, color: kPrimaryColor),
+                        prefixIconConstraints: BoxConstraints(
+                          minWidth: 30,
+                          minHeight: 0,
+                        ),
                       ),
                     ),
                   ),
@@ -57,17 +63,16 @@ class SearchView extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 2, top: 10),
                 physics: const BouncingScrollPhysics(),
                 itemCount: recipeDetails().length,
-                itemBuilder: (context, index) => Column(
-                  children: [
-                    RecipeCard(
-                      recipe: recipeDetails()[index],
-                      index: index,
+                itemBuilder:
+                    (context, index) => Column(
+                      children: [
+                        RecipeCard(
+                          recipe: recipeDetails()[index],
+                          index: index,
+                        ),
+                        const SizedBox(height: 40),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 40,
-                    ),
-                  ],
-                ),
               ),
             ),
           ],

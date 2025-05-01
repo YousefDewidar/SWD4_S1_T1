@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recips_app/constant.dart';
-import 'package:recips_app/cubit/search_cubit.dart';
 import 'package:recips_app/views/search_view.dart';
 
 class SearchCard extends StatelessWidget {
-  const SearchCard({
-    super.key,
-  });
+  const SearchCard({super.key});
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: GestureDetector(
@@ -19,29 +16,30 @@ class SearchCard extends StatelessWidget {
         },
         child: Card(
           shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8))),
-          color: Colors.white,
-          elevation: 4,
+            borderRadius: BorderRadius.all(Radius.circular(8)),
+          ),
+          color: isDark ? const Color(0x2C9E9E9E) : Colors.white,
+          elevation: isDark ? 0 : 6,
           shadowColor: const Color.fromARGB(116, 212, 212, 212),
           surfaceTintColor: Colors.white,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: TextField(
               enabled: false,
-              onChanged: (v) {
-                BlocProvider.of<SearchCubit>(context).search(searchWord: v);
-              },
-              decoration: const InputDecoration(
+              onChanged: (v) {},
+              decoration: InputDecoration(
                 border: InputBorder.none,
                 enabledBorder: InputBorder.none,
                 focusedBorder: InputBorder.none,
-                hintText: 'Search here',
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: kPrimaryColor,
+                hintText: 'Search...',
+                hintStyle: TextStyle(
+                  color: isDark ? Colors.white : Colors.grey,
                 ),
-                prefixIconConstraints:
-                    BoxConstraints(minWidth: 30, minHeight: 0),
+                prefixIcon: Icon(Icons.search, color: kPrimaryColor),
+                prefixIconConstraints: BoxConstraints(
+                  minWidth: 30,
+                  minHeight: 0,
+                ),
               ),
             ),
           ),
