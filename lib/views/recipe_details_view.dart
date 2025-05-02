@@ -52,7 +52,7 @@ class RecipeDetailsView extends StatelessWidget {
                   children: [
                     recipeInfo(
                       Icons.schedule,
-                      "${recipe.prepTimeMinutes + recipe.cookTimeMinutes} min",
+                      "${recipe.cookTimeMinutes} min",
                       Colors.amberAccent,
                     ),
                     recipeInfo(
