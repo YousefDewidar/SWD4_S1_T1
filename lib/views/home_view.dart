@@ -18,6 +18,7 @@ class HomeView extends StatelessWidget {
       child: Scaffold(
         appBar: buildHomeAppBar(context),
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Column(

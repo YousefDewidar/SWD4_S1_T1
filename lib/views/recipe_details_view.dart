@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recips_app/models/recipe_model.dart';
 
@@ -213,7 +214,17 @@ class DetailsRecipeAppBar extends StatelessWidget {
                     : null,
             background: Hero(
               tag: recipe.image,
-              child: Image.network(recipe.image, fit: BoxFit.cover),
+              child: CachedNetworkImage(
+                imageUrl: recipe.image,
+                fit: BoxFit.cover,
+                placeholder:
+                    (context, url) => Center(
+                      child: const CircularProgressIndicator(
+                        color: Colors.white,
+                      ),
+                    ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
             ),
           );
         },

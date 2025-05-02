@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recips_app/models/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
@@ -104,7 +105,18 @@ class RecipeCard extends StatelessWidget {
                       tag: recipe.image,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: Image.network(recipe.image, width: 60, height: 60),
+                        child: CachedNetworkImage(
+                          imageUrl: recipe.image,
+                          width: 60,
+                          height: 60,
+                          fit: BoxFit.cover,
+                          placeholder:
+                              (context, url) => const CircularProgressIndicator(
+                                color: Colors.white,
+                              ),
+                          errorWidget:
+                              (context, url, error) => const Icon(Icons.error),
+                        ),
                       ),
                     ),
                   ),
