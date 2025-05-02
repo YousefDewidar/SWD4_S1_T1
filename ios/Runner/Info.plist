@@ -46,11 +46,11 @@
 		<key>UIApplicationSupportsIndirectInputEvents</key>
 		<true/>
 		<key>UIStatusBarHidden</key>
-		<true/>
+		<false/>
 		<key>CFBundleLocalizations</key>
-    	<array>
-    	<string>en</string>
-    	<string>ar</string>
+		<array>
+			<string>en</string>
+			<string>ar</string>
 		</array>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
