@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:recips_app/constant.dart';
 import 'package:recips_app/views/search_view.dart';
 
@@ -12,7 +13,14 @@ class SearchCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 15.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, SearchView.id);
+          Navigator.push(
+            context,
+            PageTransition(
+              type: PageTransitionType.fade,
+              child: const SearchView(),
+              duration: const Duration(milliseconds: 400),
+            ),
+          );
         },
         child: Card(
           shape: const RoundedRectangleBorder(

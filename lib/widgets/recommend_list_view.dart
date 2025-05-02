@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recips_app/cubit/recipe_cubit.dart';
 import 'package:recips_app/cubit/recipe_state.dart';
 import 'package:recips_app/helper/get_recipe_data.dart';
-import 'package:recips_app/views/all_recommended_view.dart';
+import 'package:recips_app/views/recommended_view.dart';
 import 'package:recips_app/widgets/recipe_card.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -38,7 +38,7 @@ class RecommendedListView extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder:
-                                  (context) => AllRecommendedView(
+                                  (context) => RecommendedView(
                                     recipes: state.recipes,
                                   ),
                             ),

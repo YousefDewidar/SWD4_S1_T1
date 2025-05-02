@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ImageFoodCard extends StatelessWidget {
-  const ImageFoodCard({
-    super.key,
-    required this.img,
-  });
+  const ImageFoodCard({super.key, required this.img});
   final String img;
 
   @override
@@ -15,18 +12,24 @@ class ImageFoodCard extends StatelessWidget {
       surfaceTintColor: Colors.white,
       margin: EdgeInsets.zero,
       shape: const ContinuousRectangleBorder(
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(100),
-              bottomRight: Radius.circular(100))),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(100),
+          bottomRight: Radius.circular(100),
+        ),
+      ),
       child: SizedBox(
         height: 250,
         child: Center(
           child: CircleAvatar(
             radius: 120,
             backgroundColor: Colors.transparent,
-            child: ClipRRect(
+            child: Hero(
+              tag: img,
+              child: ClipRRect(
                 borderRadius: BorderRadius.circular(50),
-                child: Image.network(img)),
+                child: Image.network(img),
+              ),
+            ),
           ),
         ),
       ),
