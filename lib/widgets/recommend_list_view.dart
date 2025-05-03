@@ -14,96 +14,92 @@ class RecommendedListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => RecipeCubit()..getRecommendedRecipe(),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 25.0),
-        child: BlocBuilder<RecipeCubit, RecipeState>(
-          builder: (context, state) {
-            return Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Recommended',
+      child: BlocBuilder<RecipeCubit, RecipeState>(
+        builder: (context, state) {
+          return Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Recommended',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 24,
+                      // color: Color.fromARGB(255, 45, 45, 45),
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      if (state is RecipeLoaded) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) =>
+                                    RecommendedView(recipes: state.recipes),
+                          ),
+                        );
+                      }
+                    },
+                    child: Text(
+                      "view all",
                       style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        // color: Color.fromARGB(255, 45, 45, 45),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 17,
+                        color:
+                            Theme.of(context).brightness == Brightness.dark
+                                ? Colors.white
+                                : Color.fromARGB(228, 81, 81, 81),
                       ),
                     ),
-                    TextButton(
-                      onPressed: () {
-                        if (state is RecipeLoaded) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder:
-                                  (context) => RecommendedView(
-                                    recipes: state.recipes,
-                                  ),
-                            ),
-                          );
-                        }
-                      },
-                      child: Text(
-                        "view all",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 17,
-                          color:
-                              Theme.of(context).brightness == Brightness.dark
-                                  ? Colors.white
-                                  : Color.fromARGB(228, 81, 81, 81),
-                        ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 18),
+              if (state is RecipeLoaded)
+                ListView.builder(
+                  shrinkWrap: true,
+                  padding: const EdgeInsets.only(left: 2, top: 10),
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount:
+                      state.recipes.length > 6 ? 6 : state.recipes.length,
+                  itemBuilder:
+                      (context, index) => Column(
+                        children: [
+                          RecipeCard(
+                            recipe: state.recipes[index],
+                            index: index,
+                          ),
+                          const SizedBox(height: 40),
+                        ],
                       ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 18),
-                if (state is RecipeLoaded)
-                  ListView.builder(
+                )
+              else if (state is RecipeError)
+                const Center(child: Text("Error"))
+              else
+                Skeletonizer(
+                  enabled: true,
+                  child: ListView.builder(
                     shrinkWrap: true,
                     padding: const EdgeInsets.only(left: 2, top: 10),
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount:
-                        state.recipes.length > 6 ? 6 : state.recipes.length,
+                    itemCount: recipeDetails().length,
                     itemBuilder:
                         (context, index) => Column(
                           children: [
                             RecipeCard(
-                              recipe: state.recipes[index],
+                              recipe: recipeDetails()[index],
                               index: index,
                             ),
                             const SizedBox(height: 40),
                           ],
                         ),
-                  )
-                else if (state is RecipeError)
-                  const Center(child: Text("Error"))
-                else
-                  Skeletonizer(
-                    enabled: true,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      padding: const EdgeInsets.only(left: 2, top: 10),
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: recipeDetails().length,
-                      itemBuilder:
-                          (context, index) => Column(
-                            children: [
-                              RecipeCard(
-                                recipe: recipeDetails()[index],
-                                index: index,
-                              ),
-                              const SizedBox(height: 40),
-                            ],
-                          ),
-                    ),
                   ),
-              ],
-            );
-          },
-        ),
+                ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -7,7 +7,7 @@ import 'package:recips_app/widgets/recipe_card.dart';
 class RecipeListScreen extends StatelessWidget {
   final String category;
 
-  const RecipeListScreen({required this.category});
+  const RecipeListScreen({super.key, required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +29,7 @@ class RecipeListScreen extends StatelessWidget {
           final recipes = snapshot.data!;
 
           return ListView.builder(
+            padding: EdgeInsets.only(right: 16.0, left: 16.0, top: 20.0),
             itemCount: recipes.length,
             itemBuilder: (context, index) {
               return GestureDetector(
@@ -37,7 +38,7 @@ class RecipeListScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder:
-                            (context) =>
+                          (context) =>
                               RecipeDetailsView(recipe: recipes[index]),
                     ),
                   );

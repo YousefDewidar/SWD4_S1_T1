@@ -11,9 +11,10 @@ class CategoryCard extends StatelessWidget {
     Color cardColor = isDark ? const Color(0xFF2C2C2C) : Colors.white;
     Color textColor = isDark ? Colors.white : Colors.black87;
     Color borderColor = isDark ? Colors.grey.shade700 : Colors.grey.shade300;
-    List<Color> gradientColors = isDark
-        ? [const Color(0xFF2C2C2C), const Color(0xFF1C1C1C)]
-        : [Colors.white, Colors.grey.shade100];
+    List<Color> gradientColors =
+        isDark
+            ? [const Color(0xFF2C2C2C), const Color(0xFF1C1C1C)]
+            : [Colors.white, Colors.grey.shade100];
 
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),

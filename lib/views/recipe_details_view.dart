@@ -195,7 +195,11 @@ class DetailsRecipeAppBar extends StatelessWidget {
                     ? Row(
                       children: [
                         CircleAvatar(
-                          backgroundImage: NetworkImage(recipe.image),
+                          backgroundImage: CachedNetworkImageProvider(
+                            recipe.image,
+                            maxWidth: 60,
+                            maxHeight: 60,
+                          ),
                           radius: 19,
                         ),
                         SizedBox(width: 8),

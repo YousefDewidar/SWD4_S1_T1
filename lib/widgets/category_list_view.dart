@@ -11,7 +11,7 @@ class CategoryListView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10.0, bottom: 18),
       child: SizedBox(
-        height: 200,
+        height: MediaQuery.of(context).size.height * 0.2,
         child: FutureBuilder<List<Category>>(
           future: getCategories(),
           builder: (context, snapshot) {
@@ -22,10 +22,9 @@ class CategoryListView extends StatelessWidget {
             } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
               return const Center(child: Text('No categories found'));
             }
-
             final categories = snapshot.data!;
-
             return ListView.builder(
+              shrinkWrap: true,
               clipBehavior: Clip.none,
               scrollDirection: Axis.horizontal,
               itemCount: categories.length,
@@ -37,10 +36,7 @@ class CategoryListView extends StatelessWidget {
                   builder: (context, value, child) {
                     return Transform.scale(
                       scale: value,
-                      child: Opacity(
-                        opacity: value,
-                        child: child,
-                      ),
+                      child: Opacity(opacity: value, child: child),
                     );
                   },
                   child: GestureDetector(
@@ -48,9 +44,9 @@ class CategoryListView extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RecipeListScreen(
-                            category: category.name,
-                          ),
+                          builder:
+                              (context) =>
+                                  RecipeListScreen(category: category.name),
                         ),
                       );
                     },
