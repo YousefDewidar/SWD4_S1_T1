@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/helper/custom_recipe_data.dart';
 
 class CategoryCard extends StatelessWidget {
@@ -8,21 +7,6 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final now = DateTime.now();
-    final hour = now.hour;
-    String prioritizedCategory;
-    if (hour >= 5 && hour < 11) {
-      prioritizedCategory = "breakfast";
-    } else if (hour >= 11 && hour < 16) {
-      prioritizedCategory = "lunch";
-    } else if (hour >= 16 && hour < 21) {
-      prioritizedCategory = "dinner";
-    } else {
-      prioritizedCategory = "snack";
-    }
-
-    final isPrioritized = category.name.toLowerCase() == prioritizedCategory;
-
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: Stack(
@@ -34,17 +18,12 @@ class CategoryCard extends StatelessWidget {
             shadowColor: Colors.black26,
             shape: const StadiumBorder(),
             child: Container(
-              height: 180, 
-              width: 110, 
+              height: 180,
+              width: 110,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 gradient: LinearGradient(
-                  colors: [
-                    Colors.white,
-                    isPrioritized
-                        ? kPrimaryColor.withOpacity(0.1)
-                        : Colors.grey.shade100,
-                  ],
+                  colors: [Colors.white, Colors.grey.shade100],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
@@ -52,17 +31,12 @@ class CategoryCard extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    width: 100, 
-                    height: 100, 
-                    margin: const EdgeInsets.only(top: 15), 
+                    width: 100,
+                    height: 100,
+                    margin: const EdgeInsets.only(top: 15),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                        color: isPrioritized
-                            ? kPrimaryColor
-                            : Colors.grey.shade300,
-                        width: 2,
-                      ),
+                      border: Border.all(color: Colors.grey.shade300, width: 2),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.black12,
@@ -76,39 +50,19 @@ class CategoryCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12), 
+                  const SizedBox(height: 12),
                   Text(
                     category.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: isPrioritized ? kPrimaryColor : Colors.black87,
+                      color: Colors.black87,
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          if (isPrioritized)
-            Positioned(
-              top: 5,
-              right: 5,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Text(
-                  'Now',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
         ],
       ),
     );

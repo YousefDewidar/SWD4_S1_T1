@@ -24,34 +24,31 @@ class SearchView extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 15.0),
-              child: GestureDetector(
-                onTap: () {},
-                child: Card(
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                  ),
-                  color: isDark ? const Color(0x2C9E9E9E) : Colors.white,
-                  elevation: isDark ? 0 : 6,
-                  shadowColor: const Color.fromARGB(116, 212, 212, 212),
-                  surfaceTintColor: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: TextField(
-                      enabled: false,
-                      onChanged: (v) {},
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                        hintText: 'Search...',
-                        hintStyle: TextStyle(
-                          color: isDark ? Colors.white : Colors.grey,
-                        ),
-                        prefixIcon: Icon(Icons.search, color: kPrimaryColor),
-                        prefixIconConstraints: BoxConstraints(
-                          minWidth: 30,
-                          minHeight: 0,
-                        ),
+              child: Card(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(8)),
+                ),
+                color: isDark ? const Color(0x2C9E9E9E) : Colors.white,
+                elevation: isDark ? 0 : 6,
+                shadowColor: const Color.fromARGB(116, 212, 212, 212),
+                surfaceTintColor: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: TextField(
+                    autofocus: true,
+                    onChanged: (v) {},
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      hintText: 'Search...',
+                      hintStyle: TextStyle(
+                        color: isDark ? Colors.white : Colors.grey,
+                      ),
+                      prefixIcon: Icon(Icons.search, color: kPrimaryColor),
+                      prefixIconConstraints: BoxConstraints(
+                        minWidth: 30,
+                        minHeight: 0,
                       ),
                     ),
                   ),
