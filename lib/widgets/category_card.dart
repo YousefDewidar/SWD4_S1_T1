@@ -7,41 +7,52 @@ class CategoryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = Theme.of(context).brightness == Brightness.dark;
+    Color cardColor = isDark ? const Color(0xFF2C2C2C) : Colors.white;
+    Color textColor = isDark ? Colors.white : Colors.black87;
+    Color borderColor = isDark ? Colors.grey.shade700 : Colors.grey.shade300;
+    List<Color> gradientColors = isDark
+        ? [const Color(0xFF2C2C2C), const Color(0xFF1C1C1C)]
+        : [Colors.white, Colors.grey.shade100];
+
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: Stack(
         children: [
           Card(
-            color: Colors.white,
-            surfaceTintColor: Colors.white,
-            elevation: 8,
-            shadowColor: Colors.black26,
-            shape: const StadiumBorder(),
+            color: cardColor,
+            surfaceTintColor: cardColor,
+            elevation: 6,
+            shadowColor: isDark ? Colors.black54 : Colors.black26,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(80),
+            ),
             child: Container(
-              height: 180,
-              width: 110,
+              height: 150,
+              width: 120,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(80),
                 gradient: LinearGradient(
-                  colors: [Colors.white, Colors.grey.shade100],
+                  colors: gradientColors,
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                 ),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 100,
-                    height: 100,
-                    margin: const EdgeInsets.only(top: 15),
+                    width: 90,
+                    height: 90,
+                    margin: const EdgeInsets.only(bottom: 8),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(color: Colors.grey.shade300, width: 2),
+                      border: Border.all(color: borderColor, width: 2),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 8,
-                          offset: const Offset(0, 4),
+                          color: isDark ? Colors.black54 : Colors.black12,
+                          blurRadius: 6,
+                          offset: const Offset(0, 3),
                         ),
                       ],
                       image: DecorationImage(
@@ -50,14 +61,14 @@ class CategoryCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 12),
                   Text(
                     category.name,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      color: textColor,
                     ),
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
