@@ -44,7 +44,7 @@ class HomeView extends StatelessWidget {
       backgroundColor: Colors.transparent,
       title: Row(
         children: [
-          Image.asset("assets/food-13646 1.png", width: 48),
+          Image.asset("assets/recipe_logo.png", width: 48),
           const SizedBox(width: 10),
           const Text(
             'Yummy ',

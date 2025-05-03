@@ -21,8 +21,12 @@ class YummyRecipesApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             themeMode: state is ThemeChanged ? state.theme : ThemeMode.system,
-            darkTheme: ThemeData.dark(),
+          
+            darkTheme: ThemeData.dark().copyWith(
+              textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Cairo'),
+            ),
             theme: ThemeData.light().copyWith(
+              textTheme: ThemeData.light().textTheme.apply(fontFamily: 'Cairo'),
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
             ),
             routes: {
