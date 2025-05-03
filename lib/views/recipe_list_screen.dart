@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:recips_app/helper/custom_recipe_data.dart';
 import 'package:recips_app/models/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
-import 'package:recips_app/widgets/details_view/info_details_view.dart';
 import 'package:recips_app/widgets/recipe_card.dart';
 
 class RecipeListScreen extends StatelessWidget {
