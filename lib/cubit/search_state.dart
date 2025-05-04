@@ -1,5 +1,16 @@
-class SearchState{}
+abstract class SearchStates{}
 
-class InitialState extends SearchState{}
-class SearchDoneState extends SearchState{}
-class SearchFailerState extends SearchState{}
+class SearchInitialState extends SearchStates{}
+
+class GetSearchLoadingState extends SearchStates{}
+
+class GetSearchSuccessState extends SearchStates{
+  final List<dynamic> recipes;
+  GetSearchSuccessState(this.recipes);
+}
+
+class GetSearchFailureState extends SearchStates{
+  final String error;
+  GetSearchFailureState(this.error);
+
+}
