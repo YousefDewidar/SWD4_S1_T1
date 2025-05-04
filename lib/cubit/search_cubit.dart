@@ -15,7 +15,7 @@ class SearchCubit extends Cubit<SearchStates> {
     emit(GetSearchLoadingState());
     try {
       final response = await _apiService.get(
-        endPoint: '/recipes?query=$query&sortBy=rating&order=desc&limit=6',
+        endPoint: '/recipes?query=$query&include_categories=true',
       );
 
       final List<dynamic>? recipesJson = response.data["recipes"] as List<dynamic>?;
