@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recips_app/models/recipe_model.dart';
+import 'package:recips_app/views/cooking_mode_view.dart';
 
 class RecipeDetailsView extends StatelessWidget {
   const RecipeDetailsView({super.key, required this.recipe});
@@ -17,10 +18,55 @@ class RecipeDetailsView extends StatelessWidget {
             delegate: SliverChildListDelegate([
               const SizedBox(height: 12),
               Padding(
-                padding: EdgeInsets.only(left: 15),
-                child: Text(
-                  recipe.name,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        recipe.name,
+                        style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder:
+                                (context) => CookingModeView(
+                                  imageUrl: recipe.image,
+                                  recipeName: recipe.name,
+                                  steps: recipe.instructions as List<String>,
+                                  cookTime: recipe.cookTimeMinutes.toString(),
+                                  preparationTime: recipe.prepTimeMinutes.toString(),
+                                ),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16,
+                          vertical: 5,
+                        ),
+                      ),
+                      child: Text(
+                        'Cooking Mode',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Padding(

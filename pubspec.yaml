@@ -22,6 +22,8 @@ dependencies:
   shared_preferences:
   device_preview: ^1.2.0
   page_transition:
+  flutter_tts:
+  lottie:
 
 dev_dependencies:
   flutter_test:
