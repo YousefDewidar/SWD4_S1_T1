@@ -29,7 +29,7 @@ class SearchCubit extends Cubit<SearchStates> {
           .map((json) => Recipe.fromJson(json as Map<String, dynamic>))
           .where((recipe) => recipe.name.toLowerCase().contains(query.toLowerCase()))
           .toList();
-      debugPrint('The search results are: ${recipes} search results');
+      debugPrint('The search results are: ${recipes}');
 
       emit(GetSearchSuccessState(recipes));
     } catch (e) {
