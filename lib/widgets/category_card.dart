@@ -11,10 +11,14 @@ class CategoryCard extends StatelessWidget {
     Color cardColor = isDark ? const Color(0xFF2C2C2C) : Colors.white;
     Color textColor = isDark ? Colors.white : Colors.black87;
     Color borderColor = isDark ? Colors.grey.shade700 : Colors.grey.shade300;
-    List<Color> gradientColors =
-        isDark
-            ? [const Color(0xFF2C2C2C), const Color(0xFF1C1C1C)]
-            : [Colors.white, Colors.grey.shade100];
+    List<Color> gradientColors = isDark
+        ? [const Color(0xFF2C2C2C), const Color(0xFF1C1C1C)]
+        : [Colors.white, Colors.white]; 
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double cardWidth = screenWidth * 0.28; 
+    double cardHeight = cardWidth * 1.25;
+    double imageSize = cardWidth * 0.75; 
 
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
@@ -26,13 +30,13 @@ class CategoryCard extends StatelessWidget {
             elevation: 6,
             shadowColor: isDark ? Colors.black54 : Colors.black26,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(80),
+              borderRadius: BorderRadius.circular(cardWidth * 0.67),
             ),
             child: Container(
-              height: 150,
-              width: 120,
+              height: cardHeight,
+              width: cardWidth,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(80),
+                borderRadius: BorderRadius.circular(cardWidth * 0.67),
                 gradient: LinearGradient(
                   colors: gradientColors,
                   begin: Alignment.topLeft,
@@ -43,16 +47,16 @@ class CategoryCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    width: 90,
-                    height: 90,
-                    margin: const EdgeInsets.only(bottom: 8),
+                    width: imageSize,
+                    height: imageSize,
+                    margin: EdgeInsets.only(bottom: imageSize * 0.08),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: borderColor, width: 2),
                       boxShadow: [
                         BoxShadow(
                           color: isDark ? Colors.black54 : Colors.black12,
-                          blurRadius: 6,
+                          blurRadius: cardWidth * 0.05,
                           offset: const Offset(0, 3),
                         ),
                       ],
@@ -65,7 +69,7 @@ class CategoryCard extends StatelessWidget {
                   Text(
                     category.name,
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: cardWidth * 0.13,
                       fontWeight: FontWeight.w600,
                       color: textColor,
                     ),
