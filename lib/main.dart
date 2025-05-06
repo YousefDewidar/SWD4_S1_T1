@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_cubit.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_state.dart';
@@ -7,8 +6,8 @@ import 'package:recips_app/views/home_view.dart';
 import 'package:recips_app/views/search_view.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(const YummyRecipesApp());
 }
 
@@ -24,7 +23,6 @@ class YummyRecipesApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             themeMode: state is ThemeChanged ? state.theme : ThemeMode.system,
-          
             darkTheme: ThemeData.dark().copyWith(
               textTheme: ThemeData.dark().textTheme.apply(fontFamily: 'Cairo'),
             ),

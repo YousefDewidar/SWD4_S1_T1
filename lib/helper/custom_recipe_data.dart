@@ -11,7 +11,7 @@ class Category {
 final Dio _dio = Dio();
 
 Future<List<Category>> getCategories() async {
-  final Categories = [
+  final categories = [
     "breakfast",
     "lunch",
     "dinner",
@@ -32,7 +32,7 @@ Future<List<Category>> getCategories() async {
   };
 
   List<Category> categoryList =
-      Categories.map((category) {
+      categories.map((category) {
         return Category(
           name: category,
           image:
