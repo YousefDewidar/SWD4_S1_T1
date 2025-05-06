@@ -15,7 +15,7 @@ class SearchCubit extends Cubit<SearchStates> {
     emit(GetSearchLoadingState());
     try {
       final response = await _apiService.get(
-        endPoint: '/recipes?query=$query&include_categories=true',
+        endPoint: '/recipes/search?q=$query',
       );
 
       final List<dynamic>? recipesJson = response.data["recipes"] as List<dynamic>?;
@@ -27,7 +27,7 @@ class SearchCubit extends Cubit<SearchStates> {
 
       final List<Recipe> recipes = recipesJson
           .map((json) => Recipe.fromJson(json as Map<String, dynamic>))
-          .where((recipe) => recipe.name.toLowerCase().contains(query.toLowerCase()))
+          .where((recipe) => recipe.name.toLowerCase().startsWith(query.toLowerCase()))
           .toList();
       debugPrint('The search results are: $recipes');
 

@@ -32,7 +32,7 @@ class SearchView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 children: [
-                  // const SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Card(
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(8)),
