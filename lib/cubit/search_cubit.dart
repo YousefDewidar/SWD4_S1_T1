@@ -11,6 +11,11 @@ class SearchCubit extends Cubit<SearchStates> {
   final ApiService _apiService = ApiService();
   var searchController = TextEditingController();
 
+  void clearSearch() {
+    searchController.clear();
+    emit(SearchInitialState());
+  }
+
   Future<void> getSearch(String query) async {
     emit(GetSearchLoadingState());
     try {

@@ -45,7 +45,11 @@ class SearchView extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: TextField(
                         onChanged: (value) {
-                          cubit.getSearch(value);
+                          if (value.isEmpty) {
+                            cubit.clearSearch();
+                          } else {
+                            cubit.getSearch(value);
+                          }
                         },
                         controller: cubit.searchController,
                         decoration: InputDecoration(
@@ -90,7 +94,7 @@ class SearchView extends StatelessWidget {
                                 ),
                           );
                         } else if (state is GetSearchFailureState) {
-                          return Center(child: Text("Error: ${state.error}"));
+                          return Center(child: Text("${state.error}"));
                         }
                         return Column(
                           mainAxisAlignment: MainAxisAlignment.center,
