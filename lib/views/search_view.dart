@@ -111,10 +111,7 @@ class SearchView extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500,
                                 color:
-                                    Theme.of(context).brightness ==
-                                            Brightness.dark
-                                        ? Colors.white70
-                                        : Colors.black54,
+                                Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
                               ),
                             ),
                           ],
