@@ -12,13 +12,13 @@ final Dio _dio = Dio();
 
 Future<List<Category>> getCategories() async {
   final categories = [
-    "breakfast",
-    "lunch",
-    "dinner",
-    "snack",
-    "dessert",
-    "appetizer",
-    "side dish",
+    "Breakfast",
+    "Lunch",
+    "Dinner",
+    "Snack",
+    "Dessert",
+    "Appetizer",
+    "Side Dish",
   ];
 
   final categoryImages = {
