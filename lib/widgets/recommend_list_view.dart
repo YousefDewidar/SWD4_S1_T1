@@ -43,7 +43,7 @@ class RecommendedListView extends StatelessWidget {
                       }
                     },
                     child: Text(
-                      "View all",
+                      "View All",
                       style: TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 17,
