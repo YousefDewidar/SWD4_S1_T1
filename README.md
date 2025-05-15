@@ -30,7 +30,7 @@ Recipe App is a mobile application designed to make discovering and exploring fo
 - Tarek moahmed ahmed
 
 
-## Screenshots
+## - Screenshots
 
 <div align="center">
 
