@@ -10,7 +10,7 @@ class Category {
 
 final Dio _dio = Dio();
 
-Future<List<Category>> getCategories() async {
+List<Category> getCategories() {
   final categories = [
     "Breakfast",
     "Lunch",

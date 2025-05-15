@@ -12,7 +12,29 @@ class RecipeListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('$category Recipes')),
+      appBar: AppBar(
+        title: Text(
+          '$category Recipes',
+          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 22),
+        ),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_rounded),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          style: ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(
+              const Color.fromARGB(84, 200, 200, 200),
+            ),
+            shape: WidgetStatePropertyAll(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+                side: BorderSide(color: Colors.black),
+              ),
+            ),
+          ),
+        ),
+      ),
       body: FutureBuilder<List<Recipe>>(
         future: getRecipesByCategory(category.toLowerCase()),
         builder: (context, snapshot) {

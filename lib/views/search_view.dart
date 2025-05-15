@@ -94,7 +94,7 @@ class SearchView extends StatelessWidget {
                                 ),
                           );
                         } else if (state is GetSearchFailureState) {
-                          return Center(child: Text("${state.error}"));
+                          return Center(child: Text(state.error));
                         }
                         return Column(
                           mainAxisAlignment: MainAxisAlignment.center,
