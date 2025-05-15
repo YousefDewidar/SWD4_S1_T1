@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_cubit.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_state.dart';
 import 'package:recips_app/views/home_view.dart';
 import 'package:recips_app/views/search_view.dart';
 
-void main() {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
   runApp(const YummyRecipesApp());
 }
 

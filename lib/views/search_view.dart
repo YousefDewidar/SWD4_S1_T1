@@ -14,12 +14,10 @@ class SearchView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => SearchCubit(),
-      child: BlocConsumer<SearchCubit, SearchStates>(
-        listener: (context, state) {},
+      child: BlocBuilder<SearchCubit, SearchStates>(
         builder: (context, state) {
           var cubit = BlocProvider.of<SearchCubit>(context);
           bool isDark = Theme.of(context).brightness == Brightness.dark;
-
           return Scaffold(
             appBar: AppBar(
               title: const Text(
@@ -111,7 +109,10 @@ class SearchView extends StatelessWidget {
                                 fontSize: 18,
                                 fontWeight: FontWeight.w500,
                                 color:
-                                Theme.of(context).brightness == Brightness.dark ? Colors.white70 : Colors.black54,
+                                    Theme.of(context).brightness ==
+                                            Brightness.dark
+                                        ? Colors.white70
+                                        : Colors.black54,
                               ),
                             ),
                           ],
