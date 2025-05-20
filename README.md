@@ -40,6 +40,7 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 
 ## Screenshots
 
+### Splash Screen
 ![Splash Screen](splash.jpg)
 
 ## Light Mode
