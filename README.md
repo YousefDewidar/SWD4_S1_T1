@@ -38,6 +38,19 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 - Recommended: /recipes?sortBy=rating&order=desc&limit=25
 - Search: /recipes/search?q=$query
 
+## Future Features
+- Synced Cooking Experience: Allow two persons to cook together at the same time, synced in real-time.
+- Recipe Sharing: Enable users to share their favorite recipes with friends and family.
+- Nutritional Information: Display detailed nutritional facts for each recipe.
+
+## Team
+- Yousef Mahmoud Dewidar
+- Menna Ebrahim Abd Elhalim
+- Omar Gamal Saleh
+- Shahd Muhammed Ali
+- Doha Mohamed Ali
+- Tarek Mohamed Ahmed
+
 ## Screenshots
 
 ### Splash Screen
@@ -49,7 +62,7 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ![Home Screen](home-light.jpg)
 
 ### Breakfast Recipes (Category Example)
-![Breakfast Recipes Category Example](breakfast-light.jpg)
+![Breakfast](breakfast-light.jpg)
 
 ### Recommended
 ![Recommended](recommended-light.jpg)
@@ -74,7 +87,7 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ![Home Screen](home-darkjpg.jpg)
 
 ### Breakfast Recipes (Category Example)
-![Breakfast Recipes Category Example](breakfast dark.jpg)
+![Breakfast](breakfast-dark.jpg)
 
 ### Recommended
 ![Recommended](recommended-dark.jpg)
@@ -92,16 +105,3 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ### Cooking Mode Screen
 ![Cooking Mode](steps-dark.jpg)
 ![Timer](timer-dark.jpg)
-
-## Future Features
-- Synced Cooking Experience: Allow two persons to cook together at the same time, synced in real-time.
-- Recipe Sharing: Enable users to share their favorite recipes with friends and family.
-- Nutritional Information: Display detailed nutritional facts for each recipe.
-
-## Team
-- Yousef Mahmoud Dewidar
-- Menna Ebrahim Abd Elhalim
-- Omar Gamal Saleh
-- Shahd Muhammed Ali
-- Doha Mohamed Ali
-- Tarek Mohamed Ahmed
