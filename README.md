@@ -40,57 +40,57 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 
 ## Screenshots
 
-- [Splash Screen](splash.jpg)
+![Splash Screen](splash.jpg)
 
 ## Light Mode
 
 ### Home Screen
-- [Home Screen](home-light.jpg)
+![Home Screen](home-light.jpg)
 
 ### Breakfast Recipes (Category Example)
-- [Breakfast Recipes Category Example](breakfast light.jpg)
+![Breakfast Recipes Category Example](breakfast-light.jpg)
 
 ### Recommended
-- [Recommended](recommended-light.jpg)
+![Recommended](recommended-light.jpg)
 
 ### Search Screen
-- [Search](serach.jpg)
+![Search](serach.jpg)
 
 ### Search Results Screen
-- [Search Results](search-res-light.jpg)
+![Search Results](search-res-light.jpg)
 
 ### Recipe Details Screen
-- [Ingredients](ingredients.jpg)
-- [Recipe Instructions](instructions-light.jpg)
+![Ingredients](ingredients.jpg)
+![Recipe Instructions](instructions-light.jpg)
 
 ### Cooking Mode Screen
-- [Cooking Mode](steps-light.jpg)
-- [Timer](timer-light.jpg)
+![Cooking Mode](steps-light.jpg)
+![Timer](timer-light.jpg)
 
 ## Dark Mode
 
 ### Home Screen
-- [Home Screen](home-darkjpg.jpg)
+![Home Screen](home-darkjpg.jpg)
 
 ### Breakfast Recipes (Category Example)
-- [Breakfast Recipes Category Example](breakfast dark.jpg)
+![Breakfast Recipes Category Example](breakfast dark.jpg)
 
 ### Recommended
-- [Recommended](recommended-dark.jpg)
+![Recommended](recommended-dark.jpg)
 
 ### Search Screen
-- [Search](serach-dark.jpg)
+![Search](serach-dark.jpg)
 
 ### Search Results Screen
-- [Search Results](search-res-dark.jpg)
+![Search Results](search-res-dark.jpg)
 
 ### Recipe Details Screen
-- [Ingredients](ingredients-dark.jpg)
-- [Recipe Instructions](instructions-dark.jpg)
+![Ingredients](ingredients-dark.jpg)
+![Recipe Instructions](instructions-dark.jpg)
 
 ### Cooking Mode Screen
-- [Cooking Mode](steps-dark.jpg)
-- [Timer](timer-dark.jpg)
+![Cooking Mode](steps-dark.jpg)
+![Timer](timer-dark.jpg)
 
 ## Future Features
 - Synced Cooking Experience: Allow two persons to cook together at the same time, synced in real-time.
