@@ -1,62 +1,106 @@
-# Rrcipe App
+# Yummy Recipes 🍳
 
-Recipe App is a mobile application designed to make discovering and exploring food recipes simple and enjoyable. The app offers an easy-to-use interface where users can browse a wide variety of recipes categorized by meal types, and view detailed information including ingredients and preparation steps.
+Yummy Recipes is a Flutter recipe application that brings people together through the joy of cooking. With the signature "Cook Together, Stay Together," our app provides a wide variety of recipes across multiple categories, featuring a clean interface and seamless user experience. Whether you're cooking for family, friends, or yourself, Yummy Recipes makes it easy to discover and share delicious meals.
 
-## - Technologies 
-- Dart
-- fluter
-- Animation
-- Rest Apis
+## Features
+- Multiple Recipe Categories: Access recipes by meal types (Breakfast, Lunch, Dinner, etc.)
+- Dark/Light Theme: Toggle between dark and light modes with theme persistence
+- Real-Time Search: Search functionality to find specific recipes with loading animations
+- Dynamic UI: Responsive design that adapts to different screen sizes
+- Image Caching: Efficient loading and caching of recipe images using CachedNetworkImage
+- Cooking Mode: Interactive mode for following recipe steps with voice guidance using Flutter TTS
+- Timer Functionality: Set timers for cooking steps with an alarm that plays when the timer ends
+- Step Navigation: Navigate between recipe steps with next and previous options
+- Recipe Card Display: View recipe cards with images, names, ratings, and cook times
+- Hero Animation: Smooth transitions between screens using Hero animations
+- Loading States: Skeleton loading screens for better UX
+- Custom Fonts: Cairo font family integration
+- Page Transitions: Smooth page transitions between screens
 
+## Technologies Used
+- Framework: Flutter
+- State Management: BLoC Pattern (flutter_bloc)
+- API Integration: Dio for HTTP requests
+- Image Handling: Cached Network Image
+- Theme Management: Custom theme implementation with SharedPreferences
+- Animations: Lottie for custom animations
+- Text-to-Speech: Flutter TTS for voice guidance
+- Loading States: Skeletonizer for loading screens
+- Page Transitions: Custom page transitions
+- Device Preview: Device preview for responsive testing
+- Code Quality: Flutter Lints
 
-## - Resources
-#### Dummy json Api
-- Base URL : https://dummyjson.com/test
+## API Integration
+The app uses the Dummy JSON API to fetch recipe data across different categories. The base URL for the API is [https://dummyjson.com/test](https://dummyjson.com/test).
+
+### Additional API Endpoints
 - Categories: /recipes/meal-type/$mealType
-- Recommended : /recipes?sortBy=rating&order=desc&limit=25
-- Search:  /recipes/search?q=$query
+- Recommended: /recipes?sortBy=rating&order=desc&limit=25
+- Search: /recipes/search?q=$query
 
-#### Flutter Docs
-- [Base URL : https://dummyjson.com/test](https://docs.flutter.dev)
+## Screenshots
 
+- [Splash Screen](splash.jpg)
 
-  
-## - Team 
-- Yousef Mahmoud Dewidar
+## Light Mode
+
+### Home Screen
+- [Home Screen](home-light.jpg)
+
+### Breakfast Recipes (Category Example)
+- [Breakfast Recipes Category Example](breakfast light.jpg)
+
+### Recommended
+- [Recommended](recommended-light.jpg)
+
+### Search Screen
+- [Search](serach.jpg)
+
+### Search Results Screen
+- [Search Results](search-res-light.jpg)
+
+### Recipe Details Screen
+- [Ingredients](ingredients.jpg)
+- [Recipe Instructions](instructions-light.jpg)
+
+### Cooking Mode Screen
+- [Cooking Mode](steps-light.jpg)
+- [Timer](timer-light.jpg)
+
+## Dark Mode
+
+### Home Screen
+- [Home Screen](home-darkjpg.jpg)
+
+### Breakfast Recipes (Category Example)
+- [Breakfast Recipes Category Example](breakfast dark.jpg)
+
+### Recommended
+- [Recommended](recommended-dark.jpg)
+
+### Search Screen
+- [Search](serach-dark.jpg)
+
+### Search Results Screen
+- [Search Results](search-res-dark.jpg)
+
+### Recipe Details Screen
+- [Ingredients](ingredients-dark.jpg)
+- [Recipe Instructions](instructions-dark.jpg)
+
+### Cooking Mode Screen
+- [Cooking Mode](steps-dark.jpg)
+- [Timer](timer-dark.jpg)
+
+## Future Features
+- Synced Cooking Experience: Allow two persons to cook together at the same time, synced in real-time.
+- Recipe Sharing: Enable users to share their favorite recipes with friends and family.
+- Nutritional Information: Display detailed nutritional facts for each recipe.
+
+## Team
+- Yousef Mahmoud Dewidar
 - Menna Ebrahim Abd Elhalim
 - Omar Gamal Saleh
 - Shahd Muhammed Ali
 - Doha Mohamed Ali
-- Tarek moahmed ahmed
-
-
-## - Screenshots
-
-<div align="center">
-
-  <img src="https://github.com/user-attachments/assets/c164d9bf-681e-4036-bdc8-1ca54ff03b40" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/fddaa8f2-753c-4229-81a1-4af2ff90115e" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/b9fa6ec1-08c6-44c9-b2b7-835c77527250" width="200" style="margin: 10px;"/>
-
-  <br/>
-
-  <img src="https://github.com/user-attachments/assets/1b5f3bd8-a1bf-4ffe-8041-ce48ba37e471" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/886f9fbf-c992-4e55-91de-327ff64a414f" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/7b55f40c-a103-41d4-8445-b5de3b624d96" width="200" style="margin: 10px;"/>
-
-  <br/>
-
-  <img src="https://github.com/user-attachments/assets/607e9f12-2220-4d82-8b99-a0ad407d7fe6" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/4376ff92-0b7e-4070-88a6-c7620d0030e0" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/056686ad-abdd-40e4-b4ae-2169ef1205cc" width="200" style="margin: 10px;"/>
-
-  <br/>
-
-  <img src="https://github.com/user-attachments/assets/d9902597-7f51-4c00-af0f-8c0fdd372a7c" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/3bcd1c77-e079-47ce-abd1-c5e110d04729" width="200" style="margin: 10px;"/>
-  <img src="https://github.com/user-attachments/assets/5400bf35-0794-4aa8-92ec-fe5e96236e55" width="200" style="margin: 10px;"/>
-
-</div>
-
-
-
+- Tarek Mohamed Ahmed
