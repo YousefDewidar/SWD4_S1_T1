@@ -64,7 +64,7 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ### Breakfast Recipes (Category Example)
 ![Breakfast](breakfast-light.jpg)
 
-### Recommended
+### Recommended Screen
 ![Recommended](recommended-light.jpg)
 
 ### Search Screen
@@ -89,7 +89,7 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ### Breakfast Recipes (Category Example)
 ![Breakfast](breakfast-dark.jpg)
 
-### Recommended
+### Recommended Screen
 ![Recommended](recommended-dark.jpg)
 
 ### Search Screen
