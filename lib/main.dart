@@ -5,6 +5,7 @@ import 'package:recips_app/cubit/theme_cubit/theme_cubit.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_state.dart';
 import 'package:recips_app/views/home_view.dart';
 import 'package:recips_app/views/search_view.dart';
+import 'package:recips_app/views/splash_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,10 +34,11 @@ class YummyRecipesApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
             ),
             routes: {
+              SplashView.id: (context) => const SplashView(),
               HomeView.id: (context) => const HomeView(),
               SearchView.id: (context) => const SearchView(),
             },
-            initialRoute: HomeView.id,
+            initialRoute: SplashView.id,
           );
         },
       ),

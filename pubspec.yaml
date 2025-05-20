@@ -12,6 +12,7 @@ dependencies:
   dio:
   skeletonizer:
   cached_network_image:
+  loading_indicator:
 
   flutter:
     sdk: flutter
