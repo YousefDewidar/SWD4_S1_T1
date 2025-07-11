@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:recips_app/cubit/search_cubit.dart';
+import 'package:recips_app/views/favorite_view.dart';
 import 'package:recips_app/widgets/home_app_bar.dart';
 import 'package:recips_app/widgets/recommend_list_view.dart';
 import 'package:recips_app/widgets/search_home_card.dart';
@@ -29,6 +30,7 @@ class HomeView extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
                 ),
                 const CategoryListView(),
+                const FavoriteView(),
                 const RecommendedListView(),
               ],
             ),

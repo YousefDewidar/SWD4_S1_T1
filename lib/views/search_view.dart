@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/cubit/search_cubit.dart';
 import 'package:recips_app/cubit/search_state.dart';
 import 'package:recips_app/widgets/recipe_card.dart';
@@ -58,7 +57,7 @@ class SearchView extends StatelessWidget {
                           hintStyle: TextStyle(
                             color: isDark ? Colors.white : Colors.grey,
                           ),
-                          prefixIcon: Icon(Icons.search, color: kPrimaryColor),
+                          prefixIcon: Icon(Icons.search, color: Colors.amber),
                           prefixIconConstraints: BoxConstraints(
                             minWidth: 30,
                             minHeight: 0,

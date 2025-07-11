@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/cubit/theme_cubit/theme_cubit.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -23,7 +22,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             style: TextStyle(
               fontWeight: FontWeight.w500,
               fontSize: 22,
-              color: kPrimaryColor,
+              color: Colors.amber,
             ),
           ),
           Spacer(),

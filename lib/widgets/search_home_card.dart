@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
-import 'package:recips_app/constant.dart';
 import 'package:recips_app/views/search_view.dart';
 
 class SearchCard extends StatelessWidget {
@@ -43,7 +42,7 @@ class SearchCard extends StatelessWidget {
                 hintStyle: TextStyle(
                   color: isDark ? Colors.white : Colors.grey,
                 ),
-                prefixIcon: Icon(Icons.search, color: kPrimaryColor),
+                prefixIcon: Icon(Icons.search, color: Colors.amber),
                 prefixIconConstraints: BoxConstraints(
                   minWidth: 30,
                   minHeight: 0,

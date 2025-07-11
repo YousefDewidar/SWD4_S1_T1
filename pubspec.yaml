@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter_bloc: ^8.1.6
   dio:
-  skeletonizer:
   cached_network_image:
   loading_indicator:
 
@@ -20,6 +19,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   hexcolor: ^3.0.1
   percent_indicator: ^4.2.3
+  shimmer:
   shared_preferences:
   device_preview: ^1.2.0
   page_transition:
