@@ -1,4 +1,4 @@
-# Yummy Recipes 🍳
+# Yummy Recipes
 
 Yummy Recipes is a Flutter recipe application that brings people together through the joy of cooking. With the signature "Cook Together, Stay Together," our app provides a wide variety of recipes across multiple categories, featuring a clean interface and seamless user experience. Whether you're cooking for family, friends, or yourself, Yummy Recipes makes it easy to discover and share delicious meals.
 
@@ -44,9 +44,9 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 - Nutritional Information: Display detailed nutritional facts for each recipe.
 
 ## Team
+- Omar Gamal Saleh
 - Yousef Mahmoud Dewidar
 - Menna Ebrahim Abd Elhalim
-- Omar Gamal Saleh
 - Shahd Muhammed Ali
 - Doha Mohamed Ali
 - Tarek Mohamed Ahmed
@@ -54,54 +54,55 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 ## Screenshots
 
 ### Splash Screen
-![Splash Screen](splash.jpg)
+![Splash Screen](assets/screenshots/splash.jpg)
 
 ## Light Mode
 
 ### Home Screen
-![Home Screen](home-light.jpg)
+![Home Screen](assets/screenshots/home-light.jpg)
 
 ### Breakfast Recipes (Category Example)
-![Breakfast](breakfast-light.jpg)
+![Breakfast](assets/screenshots/breakfast-light.jpg)
 
 ### Recommended Screen
-![Recommended](recommended-light.jpg)
+![Recommended](assets/screenshots/recommended-light.jpg)
 
 ### Search Screen
-![Search](serach.jpg)
+![Search](assets/screenshots/serach.jpg)
 
 ### Search Results Screen
-![Search Results](search-res-light.jpg)
+![Search Results](assets/screenshots/search-res-light.jpg)
 
 ### Recipe Details Screen
-![Ingredients](ingredients.jpg)
-![Recipe Instructions](instructions-light.jpg)
+![Ingredients](assets/screenshots/ingredients.jpg)
+![Recipe Instructions](assets/screenshots/instructions-light.jpg)
 
 ### Cooking Mode Screen
-![Cooking Mode](steps-light.jpg)
-![Timer](timer-light.jpg)
+![Cooking Mode](assets/screenshots/steps-light.jpg)
+![Timer](assets/screenshots/timer-light.jpg)
 
 ## Dark Mode
 
 ### Home Screen
-![Home Screen](home-darkjpg.jpg)
+![Home Screen](assets/screenshots/home-darkjpg.jpg)
 
 ### Breakfast Recipes (Category Example)
-![Breakfast](breakfast-dark.jpg)
+![Breakfast](assets/screenshots/breakfast-dark.jpg)
 
 ### Recommended Screen
-![Recommended](recommended-dark.jpg)
+![Recommended](assets/screenshots/recommended-dark.jpg)
 
 ### Search Screen
-![Search](serach-dark.jpg)
+![Search](assets/screenshots/serach-dark.jpg)
 
 ### Search Results Screen
-![Search Results](search-res-dark.jpg)
+![Search Results](assets/screenshots/search-res-dark.jpg)
 
 ### Recipe Details Screen
-![Ingredients](ingredients-dark.jpg)
-![Recipe Instructions](instructions-dark.jpg)
+![Ingredients](assets/screenshots/ingredients-dark.jpg)
+![Recipe Instructions](assets/screenshots/instructions-dark.jpg)
 
 ### Cooking Mode Screen
-![Cooking Mode](steps-dark.jpg)
-![Timer](timer-dark.jpg)
+![Cooking Mode](assets/screenshots/steps-dark.jpg)
+![Timer](assets/screenshots/timer-dark.jpg)
+
