@@ -1,6 +1,4 @@
-```markdown
 # Yummy Recipes
-
 [![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)](https://flutter.dev)
 [![BLoC Pattern](https://img.shields.io/badge/State%20Management-BLoC%20Pattern-blue)](https://bloclibrary.dev)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -121,4 +119,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [Flutter Documentation](https://flutter.dev/docs)
 - [BLoC Library](https://bloclibrary.dev)
 - [DummyJSON API Documentation](https://dummyjson.com/docs)
-```
