@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recips_app/models/recipe_model.dart';
 import 'package:recips_app/views/recipe_details_view.dart';
+import 'package:recips_app/widgets/favorite_icon_button.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({super.key, required this.recipe, required this.index});
@@ -65,9 +66,15 @@ class RecipeCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                Text(
-                  'Cook Time: ${recipe.cookTimeMinutes} minutes',
-                  style: const TextStyle(fontSize: 14, color: Colors.grey),
+                Row(
+                  children: [
+                    Text(
+                      'Cook Time: ${recipe.cookTimeMinutes} minutes',
+                      style: const TextStyle(fontSize: 14, color: Colors.grey),
+                    ),
+                    SizedBox(width: MediaQuery.of(context).size.width * 0.12),
+                    const FavoriteIconButton(),
+                  ],
                 ),
               ],
             ),
@@ -124,7 +131,6 @@ class RecipeCard extends StatelessWidget {
               ],
             ),
           ),
-      
         ],
       ),
     );

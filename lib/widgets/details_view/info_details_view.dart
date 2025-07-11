@@ -28,7 +28,6 @@ class InfoDetailsView extends StatelessWidget {
               title: '20 g',
               color: Colors.purpleAccent,
               icon: Icons.celebration),
-        
         ],
       ),
     );
