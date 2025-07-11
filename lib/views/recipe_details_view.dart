@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recips_app/models/recipe_model.dart';
 import 'package:recips_app/views/cooking_mode_view.dart';
+import 'package:recips_app/widgets/favorite_icon_button.dart';
 
 class RecipeDetailsView extends StatelessWidget {
   const RecipeDetailsView({super.key, required this.recipe});
@@ -87,6 +88,8 @@ class RecipeDetailsView extends StatelessWidget {
                   children: [
                     Icon(Icons.star, color: Colors.orange),
                     Text("${recipe.rating} (${recipe.reviewCount} reviews)"),
+                   SizedBox(width: MediaQuery.of(context).size.width * 0.54),
+                    const FavoriteIconButton(),
                   ],
                 ),
               ),
