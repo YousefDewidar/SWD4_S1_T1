@@ -1,47 +1,91 @@
+```markdown
 # Yummy Recipes
 
-Yummy Recipes is a Flutter recipe application that brings people together through the joy of cooking. With the signature "Cook Together, Stay Together," our app provides a wide variety of recipes across multiple categories, featuring a clean interface and seamless user experience. Whether you're cooking for family, friends, or yourself, Yummy Recipes makes it easy to discover and share delicious meals.
+[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)](https://flutter.dev)
+[![BLoC Pattern](https://img.shields.io/badge/State%20Management-BLoC%20Pattern-blue)](https://bloclibrary.dev)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Features
-- Multiple Recipe Categories: Access recipes by meal types (Breakfast, Lunch, Dinner, etc.)
-- Dark/Light Theme: Toggle between dark and light modes with theme persistence
-- Real-Time Search: Search functionality to find specific recipes with loading animations
-- Dynamic UI: Responsive design that adapts to different screen sizes
-- Image Caching: Efficient loading and caching of recipe images using CachedNetworkImage
-- Cooking Mode: Interactive mode for following recipe steps with voice guidance using Flutter TTS
-- Timer Functionality: Set timers for cooking steps with an alarm that plays when the timer ends
-- Step Navigation: Navigate between recipe steps with next and previous options
-- Recipe Card Display: View recipe cards with images, names, ratings, and cook times
-- Hero Animation: Smooth transitions between screens using Hero animations
-- Loading States: Skeleton loading screens for better UX
-- Custom Fonts: Cairo font family integration
-- Page Transitions: Smooth page transitions between screens
+Yummy Recipes is a sophisticated Flutter-based mobile application designed to unite culinary enthusiasts through a seamless and engaging cooking experience. Anchored by the tagline *"Cook Together, Stay Together"*, the app offers an extensive collection of recipes across diverse categories, delivering a polished interface and exceptional user experience.
 
-## Technologies Used
-- Framework: Flutter
-- State Management: BLoC Pattern (flutter_bloc)
-- API Integration: Dio for HTTP requests
-- Image Handling: Cached Network Image
-- Theme Management: Custom theme implementation with SharedPreferences
-- Animations: Lottie for custom animations
-- Text-to-Speech: Flutter TTS for voice guidance
-- Loading States: Skeletonizer for loading screens
-- Page Transitions: Custom page transitions
-- Device Preview: Device preview for responsive testing
-- Code Quality: Flutter Lints
+## Table of Contents
+- [Key Features](#key-features)
+- [Technology Stack](#technology-stack)
+- [API Integration](#api-integration)
+- [Development Setup](#development-setup)
+- [Roadmap](#roadmap)
+- [Contributors](#contributors)
+- [UI Showcase](#ui-showcase)
+- [License](#license)
+- [Resources](#resources)
+
+## Key Features
+
+### Core Functionality
+- **Diverse Recipe Categories**: Explore recipes for Breakfast, Lunch, Dinner, and more.
+- **Real-Time Search**: Instant search functionality with smooth loading animations.
+- **Timer Functionality**: Integrated timers with audible alerts for precise cooking.
+
+### User Experience
+- **Theme Customization**: Persistent Dark and Light themes for user preference.
+- **Responsive Design**: Optimized for all screen sizes, ensuring accessibility.
+- **Image Caching**: Fast-loading images with efficient caching mechanisms.
+
+### Advanced Features
+- **Cooking Mode**: Voice-guided cooking with Text-to-Speech (TTS) integration.
+- **Smooth Transitions**: Hero animations for fluid screen navigation.
+- **Skeleton Loading**: Placeholder states for enhanced loading visuals.
+- **Typography**: Custom Cairo font family for a refined aesthetic.
+- **Custom Transitions**: Tailored page transitions for a cohesive experience.
+
+## Technology Stack
+
+| Category           | Technologies                          |
+|--------------------|---------------------------------------|
+| Framework          | Flutter                              |
+| State Management   | BLoC Pattern (flutter_bloc)          |
+| Networking         | Dio                                  |
+| Image Handling     | Cached Network Image                 |
+| Animations         | Lottie                               |
+| Text-to-Speech     | Flutter TTS                          |
+| Loading States     | Skeletonizer                         |
+| Testing            | Device Preview                       |
+| Code Quality       | Flutter Lints                        |
 
 ## API Integration
-The app uses the Dummy JSON API to fetch recipe data across different categories. The base URL for the API is [https://dummyjson.com/test](https://dummyjson.com/test).
 
-### Additional API Endpoints
-- Categories: /recipes/meal-type/$mealType
-- Recommended: /recipes?sortBy=rating&order=desc&limit=25
-- Search: /recipes/search?q=$query
+The application leverages the Dummy JSON API to retrieve recipe data:
 
-## Future Features
-- Synced Cooking Experience: Allow two persons to cook together at the same time, synced in real-time.
-- Recipe Sharing: Enable users to share their favorite recipes with friends and family.
-- Nutritional Information: Display detailed nutritional facts for each recipe.
+**Base URL**: [https://dummyjson.com/test](https://dummyjson.com/test)
+
+### Endpoints
+- `GET /recipes/meal-type/$mealType`: Fetch recipes by meal category.
+- `GET /recipes?sortBy=rating&order=desc&limit=25`: Retrieve top-rated recipes.
+- `GET /recipes/search?q=$query`: Search recipes by query.
+
+## Development Setup
+
+### Prerequisites
+- Flutter SDK 3.7.2 or higher
+- Dart 3.x
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YousefDewidar/SWD4_S1_T1.git
+   ```
+2. Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+3. Launch the application:
+   ```bash
+   flutter run
+   ```
+
+## Roadmap
+- **Synced Cooking Experience**: Enable real-time collaborative cooking sessions.
+- **Recipe Sharing**: Share recipes seamlessly with friends and family.
+- **Nutritional Insights**: Provide detailed nutritional information for recipes.
 
 ## Team
 - Omar Gamal Saleh
@@ -51,58 +95,30 @@ The app uses the Dummy JSON API to fetch recipe data across different categories
 - Doha Mohamed Ali
 - Tarek Mohamed Ahmed
 
-## Screenshots
+## UI Showcase
 
 ### Splash Screen
 ![Splash Screen](assets/screenshots/splash.jpg)
 
-## Light Mode
+### Light Theme
+| Home Screen | Category View | Recipe Details |
+|-------------|---------------|----------------|
+| ![Home](assets/screenshots/home-light.jpg) | ![Breakfast](assets/screenshots/breakfast-light.jpg) | ![Ingredients](assets/screenshots/ingredients.jpg) |
 
-### Home Screen
-![Home Screen](assets/screenshots/home-light.jpg)
+| Search | Cooking Mode | Timer |
+|--------|--------------|-------|
+| ![Search](assets/screenshots/serach.jpg) | ![Cooking](assets/screenshots/steps-light.jpg) | ![Timer](assets/screenshots/timer-light.jpg) |
 
-### Breakfast Recipes (Category Example)
-![Breakfast](assets/screenshots/breakfast-light.jpg)
+### Dark Theme
+| Home Screen | Search Results | Recipe Steps |
+|-------------|----------------|--------------|
+| ![Home Dark](assets/screenshots/home-darkjpg.jpg) | ![Search Dark](assets/screenshots/search-res-dark.jpg) | ![Steps Dark](assets/screenshots/instructions-dark.jpg) |
 
-### Recommended Screen
-![Recommended](assets/screenshots/recommended-light.jpg)
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### Search Screen
-![Search](assets/screenshots/serach.jpg)
-
-### Search Results Screen
-![Search Results](assets/screenshots/search-res-light.jpg)
-
-### Recipe Details Screen
-![Ingredients](assets/screenshots/ingredients.jpg)
-![Recipe Instructions](assets/screenshots/instructions-light.jpg)
-
-### Cooking Mode Screen
-![Cooking Mode](assets/screenshots/steps-light.jpg)
-![Timer](assets/screenshots/timer-light.jpg)
-
-## Dark Mode
-
-### Home Screen
-![Home Screen](assets/screenshots/home-darkjpg.jpg)
-
-### Breakfast Recipes (Category Example)
-![Breakfast](assets/screenshots/breakfast-dark.jpg)
-
-### Recommended Screen
-![Recommended](assets/screenshots/recommended-dark.jpg)
-
-### Search Screen
-![Search](assets/screenshots/serach-dark.jpg)
-
-### Search Results Screen
-![Search Results](assets/screenshots/search-res-dark.jpg)
-
-### Recipe Details Screen
-![Ingredients](assets/screenshots/ingredients-dark.jpg)
-![Recipe Instructions](assets/screenshots/instructions-dark.jpg)
-
-### Cooking Mode Screen
-![Cooking Mode](assets/screenshots/steps-dark.jpg)
-![Timer](assets/screenshots/timer-dark.jpg)
-
+## Resources
+- [Flutter Documentation](https://flutter.dev/docs)
+- [BLoC Library](https://bloclibrary.dev)
+- [DummyJSON API Documentation](https://dummyjson.com/docs)
+```
