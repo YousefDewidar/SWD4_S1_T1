@@ -111,11 +111,3 @@ The application leverages the Dummy JSON API to retrieve recipe data:
 | Home Screen | Search Results | Recipe Steps |
 |-------------|----------------|--------------|
 | ![Home Dark](assets/screenshots/home-darkjpg.jpg) | ![Search Dark](assets/screenshots/search-res-dark.jpg) | ![Steps Dark](assets/screenshots/instructions-dark.jpg) |
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-## Resources
-- [Flutter Documentation](https://flutter.dev/docs)
-- [BLoC Library](https://bloclibrary.dev)
-- [DummyJSON API Documentation](https://dummyjson.com/docs)
