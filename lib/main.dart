@@ -7,6 +7,7 @@ import 'package:recips_app/views/favorite_view.dart';
 import 'package:recips_app/views/home_view.dart';
 import 'package:recips_app/views/search_view.dart';
 import 'package:recips_app/views/splash_view.dart';
+import 'package:recips_app/views/your_favorite_recipes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,6 +40,7 @@ class YummyRecipesApp extends StatelessWidget {
               HomeView.id: (context) => const HomeView(),
               SearchView.id: (context) => const SearchView(),
               FavoriteView.id: (context) => const FavoriteView(),
+              YourFavoriteRecipes.id: (context) => const YourFavoriteRecipes(),
             },
             initialRoute: SplashView.id,
           );

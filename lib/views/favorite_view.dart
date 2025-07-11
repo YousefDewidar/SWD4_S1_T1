@@ -6,16 +6,34 @@ class FavoriteView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Favorites',
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+    return GestureDetector(
+      onTap: () {
+        Navigator.pushNamed(context, 'YourfavoriteRecipes');
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.green
         ),
-        const SizedBox(height: 18),
-        Center(child: Text('No favorites added yet')),
-      ],
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(width: 20),
+            Image.asset(
+              'assets/snack_image.png',
+              width: MediaQuery.of(context).size.width * 0.1,
+              height: MediaQuery.of(context).size.height * 0.1,
+            ),
+            SizedBox(width: MediaQuery.of(context).size.width * 0.08),
+            Center(
+              child: const Text(
+                'Your Favorites Recipes',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
+              ),
+            ),
+            ],
+        ),
+      ),
     );
   }
 }

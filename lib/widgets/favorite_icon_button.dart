@@ -16,20 +16,33 @@ class _FavoriteIconButtonState extends State<FavoriteIconButton> {
       child: InkWell(
         borderRadius: BorderRadius.circular(20),
         onTap: () {
-          ScaffoldMessenger.of(context).showMaterialBanner(
-            MaterialBanner(content: Text("added to Favorite", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 24,color: Colors.white)),
-             backgroundColor: Colors.green,
-             leading: const Icon(Icons.check_circle, color: Colors.white),
-             actions: [
-              TextButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
-                },
-                child: const Text('OK'),
+          if(!isFavorite)
+          {ScaffoldMessenger.of(context)..hideCurrentMaterialBanner()
+            ..showMaterialBanner(
+              MaterialBanner(
+                content: const Text(
+                  "Added to Your Favorites Recipes ",
+                  style: TextStyle(fontSize: 16, color: Colors.white),
+                ),
+                backgroundColor: Colors.green,
+                actions: [
+                  TextButton(
+                    onPressed:
+                        () =>
+                            ScaffoldMessenger.of(
+                              context,
+                            ).hideCurrentMaterialBanner(),
+                    child: const Text(
+                      'DISMISS',
+                      style: TextStyle(fontSize: 13, color: Colors.white),
+                    ),
+                  ),
+                ],
               ),
-             ]
-             ),
-          );
+            );
+          Future.delayed(const Duration(seconds: 4), () {
+            ScaffoldMessenger.of(context).hideCurrentMaterialBanner();
+          });}
           setState(() {
             isFavorite = !isFavorite;
           });
@@ -44,7 +57,8 @@ class _FavoriteIconButtonState extends State<FavoriteIconButton> {
                 child: ScaleTransition(scale: animation, child: child),
               );
             },
-            child: isFavorite
+            child:
+                isFavorite
                     ? const Icon(
                       Icons.favorite,
                       key: ValueKey('filled'),
