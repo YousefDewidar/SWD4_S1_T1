@@ -1,7 +1,6 @@
 # Yummy Recipes
 [![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=flat&logo=Flutter&logoColor=white)](https://flutter.dev)
 [![BLoC Pattern](https://img.shields.io/badge/State%20Management-BLoC%20Pattern-blue)](https://bloclibrary.dev)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 Yummy Recipes is a sophisticated Flutter-based mobile application designed to unite culinary enthusiasts through a seamless and engaging cooking experience. Anchored by the tagline *"Cook Together, Stay Together"*, the app offers an extensive collection of recipes across diverse categories, delivering a polished interface and exceptional user experience.
 
@@ -11,11 +10,9 @@ Yummy Recipes is a sophisticated Flutter-based mobile application designed to un
 - [API Integration](#api-integration)
 - [Development Setup](#development-setup)
 - [Roadmap](#roadmap)
-- [Contributors](#contributors)
+- [Team](#contributors)
 - [UI Showcase](#ui-showcase)
-- [License](#license)
-- [Resources](#resources)
-
+- 
 ## Key Features
 
 ### Core Functionality
