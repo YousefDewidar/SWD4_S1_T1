@@ -10,9 +10,8 @@ Yummy Recipes is a sophisticated Flutter-based mobile application designed to un
 - [API Integration](#api-integration)
 - [Development Setup](#development-setup)
 - [Roadmap](#roadmap)
-- [Team](#contributors)
+- [Team](#team)
 - [UI Showcase](#ui-showcase)
-- 
 ## Key Features
 
 ### Core Functionality
